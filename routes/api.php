@@ -28,6 +28,9 @@ Route::post('register',userController::class . '@register');
 
 Route::get('register',userController::class . '@getAllUsers');
 
+Route::post('/login',userController::class . '@login');
+
+
 
 
 
