@@ -29,10 +29,6 @@ class userController extends Controller
         if(!$user){
             return response()->json(["message" => "user not found"],401);
         }
-        // if(!$user->password != $req->input('password')){
-        //     return response()->json(["message" => "wrong password"]);
-        // }
-
         // لان الباسورد يتم تشفيرها باي ديفولت فلما يجي يقارن يطلع نتيجه المقارنه فولصت ف الافضل نفك التشفير وبعده نقارن
         if(Hash::check($req->input('password'),$user->password)){
             return response()->json(["message" => "wrong password"],401);
