@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 
 class userController extends Controller
 {
-    //
+    // register new user
     function register(Request $req){
         $user = User::create([
             "name" => $req->input('name'),
@@ -17,11 +17,13 @@ class userController extends Controller
         return $user;
     }
 
+    // get all users
     function getAllUsers(Request $req){
         $users = User::all();
         return $users;
     }
 
+    // login an exite user
     function login(Request $req){
         $user = User::where('email',$req->input('email'))->first();
         if(!$user){

@@ -23,11 +23,13 @@ Route::get('hi',function (){
     return 'hi';
 });
 
+// register new user
 Route::post('register',userController::class . '@register');
 
-
+// get all users
 Route::get('register',userController::class . '@getAllUsers');
 
+// login an exite user
 Route::post('/login',userController::class . '@login');
 
 
